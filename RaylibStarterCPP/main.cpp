@@ -40,15 +40,20 @@ unsigned int ElfHash(unsigned char* data)
     return (hash & 0x7FFFFFFF);
 }
 
+//Hash function that takes in two unsigned arguments, one of type char, and another of type int.
 unsigned int myHash(unsigned char* data, unsigned int length)
 {
+    //unsigned int variable, hash, set to 0
     unsigned int hash = 0;
 
+    //For loop while int i is less than the length argument, increment i
     for (int i = 0; i < length; ++i)
     {
+        //sets hash to hash * a pattern number, in this case 1000, + data at the index of i
         hash = (hash * 1000) + data[i];
     }
 
+    //Returns hash, will always be positive
     return (hash & 0x7FFFFFFF);
 }
 
